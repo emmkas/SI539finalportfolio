@@ -1,0 +1,526 @@
+html{
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("../imgs/tree_background.jpeg");
+  background-attachment: fixed;  
+  background-position: right;
+  background-repeat: no-repeat; 
+  background-size: cover
+
+}
+
+h1{
+  font-size: 40px;
+  text-align: center;
+  animation-name: title_transform;
+  animation-duration: 17s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+h2{
+  font-size: 28px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+h3{
+  font-size: 20px;
+}
+
+a{
+  color: black;
+  text-decoration: underline; 
+}
+
+p{
+  font-size: 16px;
+  padding: 10px;
+  line-height: 1.5;
+}
+
+p span{
+  background-color:white;
+  padding: 2px;
+}
+
+header{
+  background-color:#ffffff;  
+  color: black;
+  text-align: center;
+  margin: 0;  
+  height: auto; 
+}
+
+nav{
+  background-color:#f0f0f0; 
+  width: 100%;
+  font-size: 22px;
+}
+
+nav ul{
+  padding: 5px;
+  list-style: none;
+  text-align: center;
+  line-height: 1.5;
+}
+
+nav a{
+  color: black;
+  text-decoration: none; 
+}
+
+nav a:hover, a:focus{
+  text-decoration: underline;
+}
+
+.open-page {
+  font-weight: bold;
+  background-color: #1a2b1a;
+  color: white;
+  border-radius: 8px;
+  padding: 3px 10px;
+}
+
+@-webkit-keyframes title_transform{
+  from {color: black;}
+  to {color: rgb(147, 173, 106);}
+}
+
+@keyframes title_transform{
+  from {color: black;}
+  to {color:  rgb(147, 173, 106);}
+} 
+
+:focus{
+  border: solid 1.5px;
+}
+
+.skip a{
+  background: white;
+  left: 0;
+  position: absolute;
+  top: -50px;
+  overflow: hidden;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+}
+
+.skip a:focus{
+  padding-bottom: 0px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.main{
+  min-height: 100%;
+  margin-bottom: -70px;
+}
+
+.page-footer, .main:after{
+  height: 70px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color:#f0f0f0;  
+  color: black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.homepage-footer{
+  margin-top: 250px;
+  height: 70px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color:#f0f0f0;  
+  color: black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.flip-card {
+  position: relative;
+  max-width: 250px;
+  perspective: 1000px; 
+  padding-left: 0;
+  margin: auto;
+  justify-items: center;
+  padding-top: 30px;
+  padding-bottom: 300px;
+}
+
+.flip-card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
+.flip-card:active .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 10px solid #3a3939;
+}
+
+.flip-card-back {
+  background-color: #f0f0f0;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.homepage-image-caption{
+  display: none;
+}
+
+.card-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  padding-bottom: 30px;
+}
+
+.card {
+  margin: 10px;
+  max-width: 75%;
+  background-color:#f0f0f0;  
+  color: black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.card h3{
+  padding: 0px 10px 0px 10px;
+}
+
+
+.card ul {
+  font-size: 18px;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+
+.grid-container{
+  display: grid;
+  grid-gap: 10px;
+  padding: 5px; 
+  align-content: center;
+}
+
+.grid-image{
+  min-width: 1fr;
+} 
+
+.grid-text{
+  font-size: 32px;
+}
+
+.grid-video{
+  margin: 5px;
+  position: relative;
+  padding-bottom: 50%;
+}
+
+.grid-video iframe{
+  position: absolute;
+  top: 0;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+}
+
+.citation-text{
+  font-size: 14px;
+  text-align: left;
+  padding: 0;
+}
+
+.gallery-container{
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto;
+  grid-template-rows: auto (repeat(9));
+  margin: 30px;
+}
+
+.gallery-item > img{
+  border: 5px solid #3a3939;
+}
+
+.gallery-item{
+  margin: 10px;
+}
+
+input[type=text], textarea {
+  width: 92%; 
+  padding: 20px;
+  border: 2px #3a3939;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #1a2b1a;
+  color: white;
+  padding: 12px 25px;
+  cursor: pointer;
+  margin: auto;
+}
+
+input[type=submit]:hover {
+  background-color:  rgb(147, 173, 106);
+  color: black;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+@media screen and (min-width: 600px) {
+
+  nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color:#f0f0f0; 
+    width: 100%;
+  }
+
+  nav li{
+    display: inline;
+    font-size: 16px;
+    padding: 1px 12px;
+  }
+  
+  .flip-card {
+    max-width: 400px;
+    height: 200px;
+    padding-bottom: 300px;
+  }
+
+  .homepage-footer{
+    margin-top: 200px;
+  }
+
+  .grid-container{
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    }
+    
+  .grid-image{
+    margin-left: 10px;
+    grid-column: 1 span 1;
+    } 
+    
+  .grid-text{
+    grid-column: 2 span 1;
+    vertical-align: middle;
+    }
+    
+  .grid-video{
+    padding-top: 10px;
+    padding-left: 40px;
+    position: relative;
+    padding-bottom: 50%;
+    grid-column: span 2;
+    align-items: center;
+    }
+      
+  .grid-video iframe{
+    position: absolute;
+    top: 0;
+    align-items: center;
+    width: 90%;
+    }
+
+  .gallery-container{
+    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    }
+    
+  .gallery-item > img{
+    border: 5px solid #3a3939;
+    }
+}
+
+@media (min-width: 850px){
+
+  body{ 
+    background-position: center; 
+  }
+
+
+  h1{
+    font-size: 50px;
+    text-align: center;
+  }
+
+  nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color:#f0f0f0; 
+    width: 100%;
+  }
+
+  nav li{
+    display: inline;
+    font-size: 24px;
+    padding: 1px 20px;
+  }
+  
+  
+  .open-page {
+    font-weight: bold;
+    background-color: #1a2b1a;
+    color: white;
+    border-radius: 8px;
+    padding: 20px 10px;
+  }
+
+  .grid-container{
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto auto;
+    }
+    
+  .grid-image{
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    } 
+    
+  .grid-text{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    height: auto;
+    }
+    
+  .grid-video{
+    padding-top: 10px;
+    padding-left: 15px;
+    position: relative;
+    padding-bottom: 50%;
+    grid-column-start: 2;
+    align-items: center;
+    }
+    
+  .grid-video iframe{
+    position: absolute;
+    top: 0;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    }
+
+  .card-container{
+    padding-top: 30px;
+    flex-direction: row;
+    padding-bottom: 50px;
+    }
+  
+  .card{
+    height: 400px;
+    width: auto;
+    }
+  
+  .card > img{
+    height: 200px;
+  }
+  
+  .gallery-container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    margin: 30px;
+    }
+  
+  .gallery-item > img{
+    border: 10px solid #3a3939;
+  }
+
+  .gallery-item > img:hover{
+    border: 10px solid rgb(147, 173, 106);
+  }
+
+  input[type=text], textarea {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) { 
+  html {
+    scroll-behavior: auto;
+  }
+
+  body{
+    background-attachment: initial;
+  }
+
+  .flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
+.flip-card:active .flip-card-inner,
+.flip-card:focus .flip-card-inner {
+  transform: none;
+  }
+
+  .homepage-footer{
+    position: fixed;
+  }
+
+  .homepage-image-caption{
+    display: contents;
+    padding-top: 100px;
+  }
+
+  .flip-card {
+    max-width: 300px;
+    height: 75px;
+    padding-bottom: 300px;
+  }
+
+  .skip a{
+    -webkit-transition: none;
+    transition: none;
+  }
+  
+  h1{
+    animation: none;
+  }
+}
